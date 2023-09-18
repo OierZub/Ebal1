@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ErosketaZerrenda">
+
+    <EditText
+        android:id="@+id/editTextProduktua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:hint="Produktua"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextKopurua"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="1"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/editTextProduktua"
+        app:layout_constraintTop_toTopOf="@+id/editTextProduktua" />
+
+    <Button
+        android:id="@+id/bSartu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Sartu"
+        app:layout_constraintStart_toStartOf="@+id/editTextProduktua"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProduktua" />
+
+    <Button
+        android:id="@+id/bEzabatu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ezabatu"
+        app:layout_constraintEnd_toEndOf="@+id/editTextKopurua"
+        app:layout_constraintTop_toTopOf="@+id/bAldatu" />
+
+    <Button
+        android:id="@+id/bAldatu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aldatu"
+        app:layout_constraintEnd_toStartOf="@+id/bEzabatu"
+        app:layout_constraintStart_toEndOf="@+id/bSartu"
+        app:layout_constraintTop_toTopOf="@+id/bSartu" />
+
+    <Button
+        android:id="@+id/bIrakurri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Irakurri"
+        app:layout_constraintEnd_toEndOf="@+id/tZerrenda"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/tZerrenda"
+        app:layout_constraintTop_toBottomOf="@+id/tZerrenda" />
+
+    <TextView
+        android:id="@+id/tZerrenda"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="28dp"
+        android:maxLines="12"
+        android:text="Zerrenda"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/bEzabatu"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/bSartu"
+        app:layout_constraintTop_toBottomOf="@+id/bAldatu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344362401106",
+    "project_id": "ebal1-37328",
+    "storage_bucket": "ebal1-37328.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344362401106:android:7c6a8cd0edc72a1cc54e8b",
+        "android_client_info": {
+          "package_name": "com.example.ebal1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE4HgwhmyXYAr3fv6zyPI07H_ftHgsB1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
