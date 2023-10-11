@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
 
-import com.example.ebal1.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,8 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
     private static FirebaseAuth mAuth;
     final private static String TAG = "AutentifikazioArduraduna";
     private SharedPreferences sharedPreferences;
@@ -102,13 +98,11 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            // updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            // updateUI(null);
                         }
                     }
                 });
@@ -135,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                             // Gorde Login datuak Shared preferences.
                             datuakGorde();
                             // Deitu ErosketaZerrenda activity-ra.
-                            Intent intent = new Intent(MainActivity.this, ErosketaZerrenda.class);
+                            Intent intent = new Intent(MainActivity.this, ErosketaZerrendaActivity.class);
                             startActivity(intent);
 
 

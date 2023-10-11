@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class ErosketaZerrenda extends AppCompatActivity {
+public class ErosketaZerrendaActivity extends AppCompatActivity {
 
     FirebaseFirestore db;
     //--
@@ -38,7 +38,6 @@ public class ErosketaZerrenda extends AppCompatActivity {
 
         // Datu basea hasieratu.
         db = FirebaseFirestore.getInstance();
-
 
         // Botoien entzuleak sortu.
         Button bSartu = findViewById(R.id.bSartu);
@@ -58,7 +57,6 @@ public class ErosketaZerrenda extends AppCompatActivity {
                 aldatu();
             }
         });
-
 
         Button bEzabatu = findViewById(R.id.bEzabatu);
         bEzabatu.setOnClickListener(new View.OnClickListener() {
@@ -117,8 +115,8 @@ public class ErosketaZerrenda extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.w(TAG, "produktuaAldatu:Arazo barik");
-                        Toast.makeText(ErosketaZerrenda.this, "Ondo aldatu da kopurua.",
+                        Log.d(TAG, "produktuaAldatu:Arazo barik");
+                        Toast.makeText(ErosketaZerrendaActivity.this, "Ondo aldatu da kopurua.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -126,7 +124,7 @@ public class ErosketaZerrenda extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w(TAG, "produktuaAldatu: ERROREA", e);
-                        Toast.makeText(ErosketaZerrenda.this, "Ezin izan da aldatu.",
+                        Toast.makeText(ErosketaZerrendaActivity.this, "Ezin izan da aldatu.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -143,7 +141,7 @@ public class ErosketaZerrenda extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG, "ezabatu:Ezabatu da produktua!");
-                        Toast.makeText(ErosketaZerrenda.this, "Ezabatu da:" + produktuIzena,
+                        Toast.makeText(ErosketaZerrendaActivity.this, "Ezabatu da:" + produktuIzena,
                                 Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -151,7 +149,7 @@ public class ErosketaZerrenda extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w(TAG, "ezabatu:Errore bat gertatu da.", e);
-                        Toast.makeText(ErosketaZerrenda.this, "Ezin izan da ezabatu.",
+                        Toast.makeText(ErosketaZerrendaActivity.this, "Ezin izan da ezabatu.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -161,6 +159,8 @@ public class ErosketaZerrenda extends AppCompatActivity {
     private void irakurri() {
         // Irakurri sartutako datuak.
         //getDatuak();
+        TextView tZerrenda = findViewById(R.id.tZerrenda);
+        tZerrenda.setText("");
 
         db.collection(BILDUMA_IZENA)
                 .get()
@@ -196,7 +196,7 @@ public class ErosketaZerrenda extends AppCompatActivity {
         produktuIzena = etProduktua.getText().toString();
         // Kopurua hutsik badago, 1 ipini.
         String sKopurua = etKopurua.getText().toString();
-        if (sKopurua.equals("")){
+        if (sKopurua.equals("")) {
             sKopurua = "1";
         }
         // int bihurtu.
